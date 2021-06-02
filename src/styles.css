@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App{
+    background-image: url(./images/bg-sunny.jpg);
+    background-size: cover;
+    background-position: bottom;  
+    transition:  1s ease-out;
+}
+
+main{
+    min-height: 100vh;
+    padding: 25px;
+}
+
+.search-box{
+    width: 100%;
+    margin: 0 0 5px;
+}
+
+.search-bar{
+    width: 100%;
+    padding: 15px;
+    appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #444444;
+    outline: none;
+    margin-top: -25px;
+}
+
+.location{
+    font-weight: 700;
+    color: #444444
+}
+
+.date{
+    padding-bottom: 60vh;
+}
+
+.temp{
+    font-size: 92px;
+    font-weight: 900;
+}
+
+.forecast-today{
+padding: 10px 0;
+}
+
+.forecast-future-container{
+    width: 80vw;
+    height: 10vh;
+
+    display: flex;
+    flex-direction: row;
+}
