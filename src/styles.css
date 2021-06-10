@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 .App{
@@ -56,4 +57,19 @@ padding: 10px 0;
 
     display: flex;
     flex-direction: row;
+}
+
+.future-div{
+    height: 80px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.future-icon{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
 }
