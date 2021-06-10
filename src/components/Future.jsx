@@ -1,84 +1,27 @@
 import React from 'react'
+import WeatherCard from './WeatherCard'
 
 export default function Future(props) {
 
-    let time = new Date().getHours()
+    let array = props.forecast.list.slice(1, 7)
 
-
-
-
-
-
+    function createCard(cardProp){
+        return (
+            <WeatherCard 
+            key={cardProp.dt_txt}
+            time={cardProp.dt_txt.slice(11, 13)}
+            icon={`url(http://openweathermap.org/img/wn/${cardProp.weather[0].icon}@2x.png)`}
+            temp={Math.round(cardProp.main.temp)}
+            />
+        )
+    }
 
     return (
         (typeof props.forecast.city != 'undefined') ? (
             <div className="forecast-future-container">
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
 
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[1].weather[0].icon}@2x.png)`}}>
+                {array.map(createCard)}
 
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[1].main.temp)}°C
-                    </div>
-                </div>
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
-
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[2].weather[0].icon}@2x.png)`}}>
-
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[2].main.temp)}°C
-                    </div>
-                </div>
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
-
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[3].weather[0].icon}@2x.png)`}}>
-
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[3].main.temp)}°C
-                    </div>
-                </div>
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
-
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[4].weather[0].icon}@2x.png)`}}>
-
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[4].main.temp)}°C
-                    </div>
-                </div>
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
-
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[5].weather[0].icon}@2x.png)`}}>
-
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[5].main.temp)}°C
-                    </div>
-                </div>
-                <div className='future-div'>
-                    <div className="future-time">{time + 3 < 24 ? time + 3 : (time + 3) - 24}
-
-                    </div>
-                    <div className="future-icon" style={{ backgroundImage: `url(http://openweathermap.org/img/wn/${props.forecast.list[6].weather[0].icon}@2x.png)`}}>
-
-                    </div>
-                    <div className="future-temp">
-                        {Math.round(props.forecast.list[6].main.temp)}°C
-                    </div>
-                </div>
             </div>
         ) : ('')
     )
