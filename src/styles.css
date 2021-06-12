@@ -6,11 +6,44 @@
 }
 
 .App{
-    background-image: url(./images/bg-sunny.jpg);
+    background-image: url(./images/Snow.png);
     background-size: cover;
     background-position: bottom;  
     transition:  1s ease-out;
 }
+
+/* WEATHER CONDITIONS */
+
+.Clear{
+    background-image: url(./images/Clear.png); 
+}
+
+.Drizzle{
+    background-image: url(./images/Drizzle.png); 
+}
+
+.Rain{
+    background-image: url(./images/Rain.png); 
+}
+
+.Snow{
+    background-image: url(./images/Snow.png); 
+}
+
+.Sunny{
+    background-image: url(./images/Sunny.png); 
+}
+
+.Clouds{
+    background-image: url(./images/Clouds.png); 
+}
+
+.Thunderstorm{
+    background-image: url(./images/Thunderstorm.png); 
+}
+
+
+
 
 main{
     min-height: 100vh;
@@ -45,6 +78,16 @@ main{
 .temp{
     font-size: 92px;
     font-weight: 900;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.min-max{
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .forecast-today{
