@@ -34,7 +34,8 @@ function App() {
 
 
   return (
-    <div className="App">
+    (typeof forecast != 'undefined') ? (
+    <div className={typeof forecast.list != 'undefined' ? `App ${forecast.list[0].weather[0].main}` : 'App'}>
       <main>
         <Header 
         selectLocation={selectLocation}
@@ -47,9 +48,8 @@ function App() {
         />
       </main>
     </div>
+    ) : ('')
   );
 }
 
 export default App;
-
-

@@ -6,7 +6,6 @@
 }
 
 .App{
-    background-image: url(./images/Snow.png);
     background-size: cover;
     background-position: bottom;  
     transition:  1s ease-out;
